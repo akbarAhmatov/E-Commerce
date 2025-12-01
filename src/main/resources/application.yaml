@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: E-Commerce
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecommerce_db
+    username: postgres
+    password: akbar_123456789
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    open-in-view: false
+
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+
+telegram:
+  bot:
+    token: 7688452450:AAFvI6hR-hfwzDWzQ2Ie2n0R3aPD6OZdx1A
+    username: poddio_commercebot
+
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.telegram.telegrambots: INFO
